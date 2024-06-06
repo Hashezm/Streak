@@ -1,6 +1,6 @@
 HOW TO DOWNLOAD!
 
-Step 1: Download and extract zip file "hashim streak extension"
+Step 1: Download and extract zip file "hashim streak extension"<br/>
 Step 2: Go to your chrome extensions and click "Manage Extensions"
 Step 3: Turn on developer mode
 Step 4: click "load unpacked" and load the unzipped folder 
