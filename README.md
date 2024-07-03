@@ -1,4 +1,4 @@
-# Hashim Streak Extension
+# Streak Extension
 
 ## How to Download and Install
 
