@@ -51,3 +51,8 @@ Streak is a Chrome extension designed to enhance student productivity by display
 ## What's Next for Streak
 - Inject the extension into every opened website (local injection).
 - Improve speed and functionality to avoid the need for reloads and reopens on new page loads or refreshes.
+
+##Examples
+Here's an example of being on a pasta recipes page while the inputed topic is "Gluten Free Recipes":
+![image](https://github.com/Hashezm/Streak/assets/76060515/5651fce1-59ab-4d40-9ee8-52560c5473c3)
+
