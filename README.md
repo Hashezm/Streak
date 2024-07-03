@@ -56,3 +56,8 @@ Streak is a Chrome extension designed to enhance student productivity by display
 - Here's an example of being on a pasta recipes page while the inputed topic is "Gluten Free Recipes":
 ![image](https://github.com/Hashezm/Streak/assets/76060515/5651fce1-59ab-4d40-9ee8-52560c5473c3)
 - As we can see the LLM's response indicates that gluten free recipes and pasta recipes are not correlated (since pasta is not gluten free) and the combo meter goes down.
+- In another example, we input the topic of "Proof by induction" and search up a basic introductory calculus youtube video:
+![image](https://github.com/Hashezm/Streak/assets/76060515/eec9f619-65ce-4c30-a2a1-b48137bb3937)
+- Since proof by induction is not a calculus topic, the LLM indicates no correlation and the combo meter goes down.
+- 
+
