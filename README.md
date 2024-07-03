@@ -3,54 +3,49 @@
 ## How to Download and Install
 
 ### Step-by-Step Installation
-1. Download and extract the zip file "hashim streak extension".
+1. Download and extract the zip file "streakdeluxe".
 2. Go to your Chrome extensions and click "Manage Extensions".
 3. Turn on Developer Mode.
 4. Click "Load Unpacked" and load the unzipped folder.
 
 ## Inspiration
-Studying often happens online, but it's easy to get distracted even when you're on topic-related webpages. We aimed to make productivity more engaging and rewarding with this extension.
 
-## What It Does
-Streak is a Chrome extension designed to enhance student productivity by displaying a combo meter that increases as long as the student remains on a relevant Chrome tab. When they get sidetracked, they lose their combo rapidly.
+Studying happens on the internet a lot of the time nowadays. But even when you're on webpages related to the topic you want to study, work, or just focus on--it's still quite easy to get distracted. That's why we wanted to make productivity more interesting and make it feel more rewarding.
 
-### Incentives for Productivity:
-- Illustrates if a tab is relevant.
-- Gamification, inspired by many games.
-- Psychological impact: The combo meter decreases quickly, encouraging users to stay focused since losing points is easier than gaining them.
+## What it does
+Streak is a chrome extension that aids in student productivity by displaying a combo meter that gradually increases so long as the student remains on a chrome tab relevant to their desired study subject. When they get side-tracked, they lose their combo rapidly.
 
-## How We Built It
-- **Layout**: Created with HTML and CSS.
-- **Logic**: Developed using vanilla JavaScript.
-- **Integration**: Utilizes Chrome API and OpenAI API, requiring additional JavaScript and JSON.
+The combo meter incentivizes productivity in the following ways:
+1. Illustrates if a tab is relevant
+2. Gamification, reference to many games.
+3. Psychological, the more points you have the more it increases. And it goes down very quickly. Based on the fact that everyone hates to see their numbers go down very quickly. Since gaining points is harder than losing them, it helps them stay focused on tabs related to their topic.
 
-## Features and How They Work
-- **Subject Lock-in**: Chrome extensions reset on page refresh. We save the chosen topic by running it through an event handler in JavaScript and saving it inside the user's local session using the Chrome API.
-- **Retrieve Current Tab Information**: Uses Chrome API to retrieve the title of the current tab by adding "currentTab" to JSON permissions.
-- **Determine Relevance**: Uses OpenAI API to check if the current tab title matches the locked-in subject. An event handler checks if the DOM content is loaded and runs it through an AI prompt for relevance, aiming for over 95% accuracy.
-- **Hide and Show GIF**: Based on relevance, an angry GIF is either added or removed from the "hide class" connected to a CSS file, and swapped with a happy GIF.
-- **Combo**: The combo increases by a formula involving multiplication by around 1.2 and a power function every 2 seconds if the subject is relevant. If not, it divides by 1.5 every 2 seconds.
-- **Save Combo**: The combo is saved the same way the subject lock-in is saved.
-- **Productivity Bar**: Consists of two CSS bars, with the green one contained within a max value of 300px. The inside bar's width increases as the user remains productive, offering a combo boost for maintaining the streak. Progress doesn't save if tabs are switched.
+## How it was built 
 
-## Challenges Ran Into
-- Recently updated APIs required thorough documentation research.
-- Original idea of injecting HTML into the current webpage for the combo and progress bar was too buggy.
-- Variables needed to be saved into a Chrome session.
-- Fine-tuning the combo's increase and decrease rates through trial and error.
-- Ensuring appropriate formatting and fixed bar width for the extension.
-- Optimizing the AI API response by simplifying the prompt.
+**Layout was created with HTML and CSS.**
+**Logic created using vanilla JS.**
+**Integration utilizes Chrome API and Cohere AI API which required additional JS and JSON.**
 
-## Skills Developed
-- Reading documentation.
-- Implementing vanilla JavaScript logic on websites.
-- API referencing, calling, and installation.
-- Understanding the potential of AI APIs for creating high-level products.
-- Developing and uploading Chrome extensions.
+Features and how they work:
+- **Subject lock-in**: Chrome extensions are made such that they are reset every page refresh, we are able to save the topic chosen by the user by running the locked-in subject through an event handler in JavaScript and then saving it inside the user's local session by calling the Chrome API.
+- **Retrieving current tab information**: Chrome API to retrieve the title of the tab the user is on by adding "currentTab" to JSON permissions.
+- **Determine relevance**: Relevance is determined through the Cohere AI API that retrieves the current tab title and the locked-in subject and through an event handler that checks if the DOM content (just the page pretty much) is loaded, then it runs it through an AI prompt to determine if they are relevant. The prompt is very specific and is trimmed down to only retrieve Yes or No, it has also been manipulated to be highly accurate (above 95%).
+- **Hide and show GIF**: Based on relevance, the angry gif is either added or removed from the "hide class" which is connected to CSS file that sets display to none, and swapped with happy gif.
+- **Combo**: Combo is run through a formula involving multiplication by around 1.2 and also a power function every 2 seconds if subject is relevant. If not, it keeps dividing itself by 1.5 every 2 seconds.
+- **Save combo**: Combo is saved the same way the subject lock-in is saved.
+- **Productivity bar**: Productivity bar is 2 CSS bars, with the green one contained within the max value of 300px. when the user is being productive the inside bar's width gradually increases until they reach 100% productivity, and they get a combo boost for maintaining that streak. This progress doesn't save if you switch tabs.
 
-## What's Next for Streak
-- Inject the extension into every opened website (local injection).
-- Improve speed and functionality to avoid the need for reloads and reopens on new page loads or refreshes.
+## Challenges 
+
+- APIs were updated very recently, so I had to dig into the documentation and find everything manually without just google searching or using any AI. 
+- The original idea involved having the extension inject HTML into the webpage you're currently on to display the combo and progress bar, however this sadly had to be scratched since it couldn't be finished in one day's work. I was able to inject a div element into websites through the extension, however it was too buggy and functionality didn't apply to it. 
+- Variables wouldn't lock in or save locally, had to be saved into a chrome session for whatever reason. 
+- Getting the combo to reasonably increase and decrease through trial and error.
+- Getting the formatting to work and be of appropriate size for an extension. 
+- Getting the bar width to be fixed and not change the whole extension width when it grows. 
+- Getting the AI api to respond quickly by simplifying the prompt and optimizing it. 
+
+
 
 ##Examples
 - Here's an example of being on a pasta recipes page while the inputed topic is "Gluten Free Recipes":
@@ -62,4 +57,11 @@ Streak is a Chrome extension designed to enhance student productivity by display
 - In this final example, I keep the "Proof by induction" topic but change the youtube video to an introductory discrete mathematics course:
 ![image](https://github.com/Hashezm/Streak/assets/76060515/5cd89563-a772-4e21-91be-47ec7c754f68)
 - As we can see, the LLM indicates correlation since PBI is under Discrete Mathematics. 
+
+## What's next for Streak
+
+- Inject the extension into every website that is opened (local injection).
+- Make it work faster and not have to reload and reopen every time a new page is opened or refreshed.
+
+These improvements are very crucial to make Streak what I envisioned it to be originally. And hopefully this will be accomplished soon, I want it to be way more practical and not a hassle to use day-to-day. 
 
