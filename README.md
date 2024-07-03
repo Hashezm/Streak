@@ -33,7 +33,7 @@ Streak is a Chrome extension designed to enhance student productivity by display
 - **Save Combo**: The combo is saved the same way the subject lock-in is saved.
 - **Productivity Bar**: Consists of two CSS bars, with the green one contained within a max value of 300px. The inside bar's width increases as the user remains productive, offering a combo boost for maintaining the streak. Progress doesn't save if tabs are switched.
 
-## Challenges We Ran Into
+## Challenges Ran Into
 - Recently updated APIs required thorough documentation research.
 - Original idea of injecting HTML into the current webpage for the combo and progress bar was too buggy.
 - Variables needed to be saved into a Chrome session.
@@ -53,6 +53,6 @@ Streak is a Chrome extension designed to enhance student productivity by display
 - Improve speed and functionality to avoid the need for reloads and reopens on new page loads or refreshes.
 
 ##Examples
-Here's an example of being on a pasta recipes page while the inputed topic is "Gluten Free Recipes":
+- Here's an example of being on a pasta recipes page while the inputed topic is "Gluten Free Recipes":
 ![image](https://github.com/Hashezm/Streak/assets/76060515/5651fce1-59ab-4d40-9ee8-52560c5473c3)
-
+- As we can see the LLM's response indicates that gluten free recipes and pasta recipes are not correlated (since pasta is not gluten free) and the combo meter goes down.
